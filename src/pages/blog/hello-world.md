@@ -5,3 +5,9 @@ thumbnail: "../../images/kitten-1.jpeg"
 ---
 
 This is my first blog post. Hello World!
+
+![Kitten One](../../images/kitten-1.jpeg)
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore nesciunt at omnis, facilis nostrum cupiditate recusandae mollitia dolorem harum repellendus.
+
+![Kitten Three](../../images/kitten-3.jpeg)
