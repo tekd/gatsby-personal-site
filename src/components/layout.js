@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 
+
 import '../styles/all.scss'
 
 const Layout = ({ children }) => (
@@ -20,6 +21,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
+
         <div
           style={{
             margin: `0 auto`,
