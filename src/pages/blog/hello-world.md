@@ -1,6 +1,6 @@
 ---
 title: Hello World
-date: 2018-12-29
+date: 2018-12-01
 thumbnail: "../../images/kitten-1.jpeg"
 tags: ['cat', 'kitten', 'javascript']
 ---

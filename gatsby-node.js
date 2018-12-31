@@ -7,6 +7,7 @@ exports.createPages = ({ actions, graphql }) => {
 
   const postTemplate = path.resolve(`src/templates/postTemplate.js`);
   const tagTemplate = path.resolve(`src/templates/tagsTemplate.js`);
+  const blogListTemplate = path.resolve('./src/templates/blogListTemplate.js');
 
   return graphql(`
     {
@@ -58,7 +59,24 @@ exports.createPages = ({ actions, graphql }) => {
         path: `/tags/${_.kebabCase(tag)}/`,
         component: tagTemplate,
         context: {
-          tag
+          tag,
+        },
+      });
+    });
+
+    // Create paginated blog list pages
+    // https://nickymeuleman.netlify.com/blog/gatsby-pagination
+    const postsPerPage = 2;
+    const numPages = Math.ceil(posts.length / postsPerPage);
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `blog/` : `blog/${i + 1}`,
+        component: blogListTemplate,
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          numPages,
+          currentPage: i + 1,
         },
       });
     });
