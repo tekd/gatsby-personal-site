@@ -3,6 +3,7 @@ module.exports = {
     title: `Gatsby Personal Website`,
     description: `My personal website.`,
     author: ``,
+    baseUrl: 'https://tender-gates-af0bc2.netlify.com',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import seoImage from '../images/kitten-1.jpeg';
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({ description, lang, meta, keywords, title, baseUrl }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -53,11 +53,11 @@ function SEO({ description, lang, meta, keywords, title }) {
               },
               {
                 property: 'og:image',
-                content: seoImage,
+                content: `${baseUrl}${seoImage}`,
               },
               {
                 name: 'twitter:image',
-                content: seoImage,
+                content: `${baseUrl}${seoImage}`,
               },
             ]
               .concat(
@@ -99,6 +99,7 @@ const detailsQuery = graphql`
         title
         description
         author
+        baseUrl
       }
     }
   }
