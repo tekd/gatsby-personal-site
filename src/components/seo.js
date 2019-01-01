@@ -4,13 +4,14 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import seoImage from '../images/kitten-1.jpeg';
 
-function SEO({ description, lang, meta, keywords, title, baseUrl }) {
+function SEO({ description, lang, meta, keywords, title }) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description;
+        const baseUrl = data.site.siteMetadata.baseUrl;
         return (
           <Helmet
             htmlAttributes={{
